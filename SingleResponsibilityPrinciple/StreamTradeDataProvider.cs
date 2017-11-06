@@ -5,14 +5,14 @@ using SingleResponsibilityPrinciple.Contracts;
 
 namespace SingleResponsibilityPrinciple
 {
-    public class StreamTradeDataProvider : ITradeDataProvider
+    public class StreamTradeDataProvider : IURLTradeDataProvider
     {
         public StreamTradeDataProvider(Stream stream)
         {
             this.stream = stream;
         }
 
-        public IEnumerable<string> GetTradeData()
+        public IEnumerable<string> GetURLTradeData()
         {
             var tradeData = new List<string>();
             using (var reader = new StreamReader(stream))
